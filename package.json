@@ -44,6 +44,7 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "jinqu-ajax": "^0.1.0"
   }
 }
