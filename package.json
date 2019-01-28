@@ -45,6 +45,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "jinqu-ajax": "^0.1.1"
+    "jinqu": "^0.5.7"
   }
 }
