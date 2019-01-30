@@ -1,6 +1,6 @@
 {
   "name": "jinqu-axios",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "jinqu axios implementation",
   "main": "dist/index.js",
   "keywords": [
@@ -11,6 +11,8 @@
   ],
   "files": [
     "dist",
+    "lib",
+    "index.ts",
     "README.md"
   ],
   "repository": {

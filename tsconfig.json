@@ -6,11 +6,11 @@
       "outDir": "./dist",
       "declaration": true,
       "downlevelIteration": true,
+      "sourceMap": true,
       "lib": [
         "es2015"
       ]
     },
-    "compileOnSave": true,
     "include": [
       "./index.ts",
       "./lib/**/*.ts"
