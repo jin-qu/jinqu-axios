@@ -1,6 +1,6 @@
 {
   "name": "jinqu-axios",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "jinqu axios implementation",
   "main": "dist/index.js",
   "keywords": [
@@ -47,6 +47,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "jinqu": "^0.5.7"
+    "jinqu": "^0.6.0"
   }
 }
