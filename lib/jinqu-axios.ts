@@ -1,9 +1,10 @@
-import { IAjaxProvider, AjaxOptions } from 'jinqu';
-import axios from 'axios';
+import { IAjaxProvider, AjaxOptions, Value, AjaxResponse } from 'jinqu';
+import axios, { AxiosResponse } from 'axios';
 
 export class AxiosAjaxProvider implements IAjaxProvider {
 
-    ajax<TResult>(o: AjaxOptions): PromiseLike<TResult> {
-        return <any>axios.request<TResult>(o);
+    ajax<T>(o: AjaxOptions): PromiseLike<Value<T> & AjaxResponse<AxiosResponse>> {
+        return <any>axios.request<T>(o)
+            .then(r => ({ value: r.data, response: r }));
     }
 }
