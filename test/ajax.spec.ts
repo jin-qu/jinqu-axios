@@ -1,10 +1,10 @@
-import { expect } from 'chai';
-import 'mocha';
-import { AxiosAjaxProvider } from '..';
+import { expect } from "chai";
+import "mocha";
+import { AxiosAjaxProvider } from "..";
 
-describe('AxiosAjaxProvider', () => {
+describe("AxiosAjaxProvider", () => {
 
-    it('should be instantiated', () => {
-        expect(new AxiosAjaxProvider()).not.be.null;
+    it("should be instantiated", () => {
+        expect(new AxiosAjaxProvider()).not.equal(null);
     });
 });
