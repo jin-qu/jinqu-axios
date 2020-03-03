@@ -50,6 +50,6 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "jinqu": "~1.1.0"
+    "jinqu": "^1.1.0"
   }
 }
