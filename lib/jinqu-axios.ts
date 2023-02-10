@@ -7,10 +7,10 @@ export class AxiosAjaxProvider implements IAjaxProvider<AxiosResponse> {
         const ao = Object.assign({}, o);
 
         if (o.params) {
-            ao.params = o.params.reduce((p, k) => (p[k.key] = k.value) && p, {}) as any;
+            ao.params = o.params.reduce((p, k) => (p[k.key] = k.value) && p, {}) as never;
         }
 
         return axios.request<T>(ao)
-            .then((r) => ({ value: r.data, response: r })) as any;
+            .then(r => ({ value: r.data, response: r })) as never;
     }
 }
