@@ -14,6 +14,7 @@
   "files": [
     "dist",
     "index.ts",
+    "lib",
     "README.md"
   ],
   "repository": {
