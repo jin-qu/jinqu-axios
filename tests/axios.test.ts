@@ -24,14 +24,10 @@ describe("Fetch tests", () => {
             { key: "$take", value: "10" },
             { key: "$where", value: "o => o.id > 5" },
         ];
-        const axiosParams = {
-            "$where": "o => o.id > 5",
-            "$orderBy": "o => o.id",
-            "$skip": "10",
-            "$take": "10"
-        }
 
-        axiosMock.onGet("Companies", { params: axiosParams }).replyOnce(200, {});
+        axiosMock
+            .onGet("Companies%3F%24where%3A%20o%20%3D%3E%20o.id%20%3E%205%26orderBy%3A%20o%20%3D%3E%20o.id%26skip%3A%2010%26take%3A%2010")
+            .replyOnce(200, {});
 
         const ajaxProvider = new AxiosAjaxProvider();
         const r = await ajaxProvider.ajax({
@@ -42,21 +38,23 @@ describe("Fetch tests", () => {
         expect(r.value).toEqual({});
     });
 
-    // it("should throw when timeout elapsed", async () => {
-    //     axiosMock.mockReturnValue(() => new Promise(r => setTimeout(() => r(null as never), 10)));
+    it("should throw when timeout elapsed", async () => {
+        axiosMock
+            .onGet("Companies")
+            .replyOnce(200, new Promise(r => setTimeout(() => r(null as never), 10)));
 
-    //     const ajaxProvider = new AxiosAjaxProvider();
+        const ajaxProvider = new AxiosAjaxProvider();
 
-    //     try {
-    //         await ajaxProvider.ajax({
-    //             url: "Companies",
-    //             timeout: 1
-    //         });
+        try {
+            await ajaxProvider.ajax({
+                url: "Companies",
+                timeout: 1
+            });
 
-    //         fail("Should have failed because of timeout");
-    //     }
-    //     catch (e) {
-    //         expect(e).toHaveProperty("message", "Request timed out");
-    //     }
-    // });
+            fail("Should have failed because of timeout");
+        }
+        catch (e) {
+            expect(e).toHaveProperty("message", "Request timed out");
+        }
+    });
 });

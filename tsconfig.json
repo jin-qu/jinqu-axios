@@ -16,6 +16,5 @@
   "include": [
     "./index.ts",
     "./lib/**/*.ts",
-    "./tests/**/*.ts"
   ]
 }
