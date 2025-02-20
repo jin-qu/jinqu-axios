@@ -27,7 +27,9 @@ describe("Fetch tests", () => {
         ];
         const $options: AjaxOptions = {
             $url: "Companies",
-            $params
+            $params,
+            $data: { },
+            $headers: { "Requested-With": "Jest" },
         };
         const params = {
             $orderBy: "o => o.id",
