@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { AjaxOptions, AjaxResponse, IAjaxProvider, Value } from "jinqu";
+import { AjaxOptions, AjaxResponse, IAjaxProvider, Value } from "@jin-qu/jinqu";
 
 export type AxiosOptions = AjaxOptions & AxiosRequestConfig;
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { AxiosAjaxProvider } from "../index";
-import { AjaxOptions } from "jinqu";
+import { AjaxOptions } from "@jin-qu/jinqu";
 
 const axiosMock = new MockAdapter(axios);
 
